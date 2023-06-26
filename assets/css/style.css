@@ -3,17 +3,20 @@
     padding: 0%;
 }
 body{
-    background:url("images/4.jpg")no-repeat;
+    background:url("images/night.jpg")no-repeat;
     background-size: cover;
     height: 100vh;
    
 }
 .card{
-    background: linear-gradient(135deg, #00feba,#5b548a);
+    width:90%;
+    max-width:500px;
+    margin:100px auto 0;
+    background: linear-gradient(135deg,#EE9CA7 ,#FFDDE1);
     color:white;
     text-align: center;
     border-radius: 20px;
-    padding:40px 35px;
+    padding:40px 40px;
 }
 
 .search
@@ -25,17 +28,34 @@ body{
 }
 
 .search input{
-    border:0;
-    
+border:0;  
+outline: 0;
 background: #ebfffc;
 color:#555;
 padding: 10px 25px;
 height: 50px;
+border-radius: 30px;
 flex:1;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-size: 18px;
+margin-right: 10px;
 }
 
-.search img{
+.search button{
+border:0;
+outline:0;
+cursor:pointer;
+border-radius:50%;
+width:40px;
+height:40px;
 
+}
+
+.search button img{
+    width:30px;
+  
+}
+
+#wind,#humidity{
+    width:50px;
 }
