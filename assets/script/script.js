@@ -8,6 +8,10 @@ var wind = document.querySelectorAll(".wind");
 var icon =document.querySelectorAll(".icon")
 
 
+function getsearchcity(){
+const Apikey ='AIzaSyAXVaVsJMefXF9k1ntdHebl7ZchfPjdEIk'
+}
+
 function getWeatherApi(){
     var requestUrl ='https://api.openweathermap.org/data/2.5/forecast?q='+cityname.value+'&appid=51e1b785d1c53673d1ab963a4ec63b88'
     fetch(requestUrl)
@@ -17,6 +21,7 @@ function getWeatherApi(){
     .then(function(data){
         console.log(data);
         
+  
         for(let j=0;j<=4;j++){
            const i=j*8;
             date[j].innerHTML=data.list[i].dt_txt;
@@ -57,12 +62,14 @@ function getWeatherApi(){
            else{
             icon[j].src="./assets/icons/clouds.png"; 
            } 
-     
         }
-        
-    })
+        }
    
+     
+    )
 }
 
 
+
 search.addEventListener('click',getWeatherApi)
+cityname.AutoComplete(getsearchcity)
