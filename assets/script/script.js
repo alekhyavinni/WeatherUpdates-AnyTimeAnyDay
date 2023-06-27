@@ -16,8 +16,9 @@ function getWeatherApi(){
     })
     .then(function(data){
         console.log(data);
+        
         for(let j=0;j<=4;j++){
-        for(let i=0;i<=39;i += 8){
+           const i=j*8;
             date[j].innerHTML=data.list[i].dt_txt;
             temp[j].innerHTML=Math.round(data.list[i].main.temp)+"°F"
             city[j].innerHTML=data.city.name;
@@ -56,8 +57,9 @@ function getWeatherApi(){
            else{
             icon[j].src="./assets/icons/clouds.png"; 
            } 
+     
         }
-        }
+        
     })
    
 }
