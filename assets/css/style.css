@@ -2,6 +2,11 @@
     margin: 0%;
     padding: 0%;
 }
+body::before{
+display: block;
+content: '';
+height:60px;
+}
 main{
   background:whitesmoke;
   background-size: cover; 
@@ -16,16 +21,16 @@ a.navbar-brand.h1 {
     font-weight: bolder;
 }
 header{
-    background:url("images/earthdown.jpg")no-repeat;
+    background:url("images/ICE.jpeg")no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 550px;
     width:100vw;
 }
 .card{
     width:100%;
     max-width:900px;
     margin:100px auto 0;
-    background: url("images/4.jpg") no-repeat;
+    background: url("images/5.jpg") no-repeat;
     background-size: cover;
     color:black;
     text-align: center;
@@ -35,10 +40,13 @@ header{
     
 }
 
-  
+ 
 #searchbar{
     width:900px;
     height:100px;
+    background:url("images/ICE.jpeg") no-repeat;
+    background-size: cover;
+  
   
 }
 .form-group
@@ -48,7 +56,22 @@ header{
    align-items: center;
    justify-content: space-between;
 }
+.title{
+    
+	font-size: 65px;
+    font-style: oblique;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;  
+} 
 
+.title1{
+     
+	font-size: 50px;
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bolder;
+	
+}
 .form-group input{
 border:0;  
 outline: 0;
