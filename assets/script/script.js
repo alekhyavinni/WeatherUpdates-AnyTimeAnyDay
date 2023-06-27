@@ -6,10 +6,20 @@ var city=document.querySelectorAll(".city");
 var humidity=document.querySelectorAll(".humidity");
 var wind = document.querySelectorAll(".wind");
 var icon =document.querySelectorAll(".icon")
+var autocomplete;
 
+
+function initMap() {
+    autocomplete = new google.maps.places.Autocomplete(cityname), {
+     types: ['geocode']
+    }
+    autocomplete.addListener('place_changed', getsearchcity)
+}
 
 function getsearchcity(){
-const Apikey ='AIzaSyAXVaVsJMefXF9k1ntdHebl7ZchfPjdEIk'
+cityname.innerHTML=''
+ var city=autocomplete.getPlace();
+ console.log(city);
 }
 
 function getWeatherApi(){
@@ -72,4 +82,5 @@ function getWeatherApi(){
 
 
 search.addEventListener('click',getWeatherApi)
-cityname.AutoComplete(getsearchcity)
+initMap();
+
