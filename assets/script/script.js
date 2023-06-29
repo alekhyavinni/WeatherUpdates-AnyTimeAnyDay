@@ -7,6 +7,7 @@ var humidity=document.querySelectorAll(".humidity");
 var wind = document.querySelectorAll(".wind");
 var icon =document.querySelectorAll(".icon")
 var display =document.querySelector('#display')
+let searchHistory = JSON.parse(localStorage.getItem("searchcity")) || [];
 var autocomplete,button1;
 
 
@@ -101,7 +102,10 @@ function getWeatherApi(){
 
 
 search.addEventListener('click',function(){
+    var citydata= cityname.value;
     getWeatherApi()
+    searchHistory.push(citydata)
+    localStorage.setItem("serachcity",JSON.stringify(searchHistory))
     displaycities()
 })
 initMap();
