@@ -6,7 +6,9 @@ var city=document.querySelectorAll(".city");
 var humidity=document.querySelectorAll(".humidity");
 var wind = document.querySelectorAll(".wind");
 var icon =document.querySelectorAll(".icon")
-var autocomplete;
+var display =document.querySelector('#display')
+var autocomplete,button1;
+
 
 
 function initMap() {
@@ -22,6 +24,20 @@ cityname.innerHTML=''
  console.log(city);
 }
 
+function displaycities(){
+    var section=document.createElement('div');
+    section.style.background= "url(./assets/css/images/ICE.jpeg) no-repeat";
+    section.style.textAlign='center';
+    button1 =document.createElement('button');
+    button1.setAttribute('type','submit');
+    button1.style.margin="5px"
+    button1.style.borderRadius="10px";
+    button1.innerText=cityname.value
+    section.append(button1)
+    display.append(section)
+   
+
+}
 function getWeatherApi(){
     var requestUrl ='https://api.openweathermap.org/data/2.5/forecast?q='+cityname.value+'&appid=51e1b785d1c53673d1ab963a4ec63b88'
     fetch(requestUrl)
@@ -30,8 +46,8 @@ function getWeatherApi(){
     })
     .then(function(data){
         console.log(data);
-        
-  
+        console.log("Cityname:"+cityname.value)
+        displaycities();
         for(let j=0;j<=4;j++){
            const i=j*8;
             date[j].innerHTML=data.list[i].dt_txt;
@@ -83,4 +99,9 @@ function getWeatherApi(){
 
 search.addEventListener('click',getWeatherApi)
 initMap();
+this.button1.addEventListener('click',function(){
+    cityname.innerText=button1.value;
+   
+    getWeatherApi();
+})
 

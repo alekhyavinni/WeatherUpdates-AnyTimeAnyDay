@@ -2,11 +2,11 @@
     margin: 0%;
     padding: 0%;
 }
-body::before{
-display: block;
-content: '';
-height:60px;
+
+:root{
+    --light: #fffaf7;
 }
+
 main{
   background:whitesmoke;
   background-size: cover; 
@@ -23,31 +23,33 @@ a.navbar-brand.h1 {
 header{
     background:url("images/ICE.jpeg")no-repeat;
     background-size: cover;
-    height: 550px;
-    width:100vw;
+    height: 530px;
+   
 }
 .card{
     width:100%;
     max-width:900px;
     margin:100px auto 0;
-    background: url("images/5.jpg") no-repeat;
+    background: url("images/4.jpg") no-repeat;
     background-size: cover;
     color:black;
     text-align: center;
     border-radius: 20px;
     padding:40px 40px;
     opacity:0.8;
-    
 }
-
  
 #searchbar{
     width:900px;
     height:100px;
     background:url("images/ICE.jpeg") no-repeat;
     background-size: cover;
+    margin-top: 25px;
   
   
+}
+#tempcards{
+    margin-top: -60px;
 }
 .form-group
 {
@@ -122,4 +124,15 @@ p{
     font-size:large;
     font-weight: 500;
     font-style: oblique;
+}
+#copyright{
+    font-style: italic;
+    font-weight:600;
+}
+footer{
+    background:url("images/ICE.jpeg")no-repeat;
+    background-size: cover;
+  
+
+ 
 }
