@@ -3,6 +3,10 @@
     padding: 0%;
 }
 
+:root{
+    --light: #fffaf7;
+}
+
 main{
   background:whitesmoke;
   background-size: cover; 
@@ -19,23 +23,21 @@ a.navbar-brand.h1 {
 header{
     background:url("images/ICE.jpeg")no-repeat;
     background-size: cover;
-    height: 550px;
-    width:100vw;
+    height: 530px;
+   
 }
 .card{
     width:100%;
     max-width:900px;
     margin:100px auto 0;
-    background: url("images/5.jpg") no-repeat;
+    background: url("images/4.jpg") no-repeat;
     background-size: cover;
     color:black;
     text-align: center;
     border-radius: 20px;
     padding:40px 40px;
     opacity:0.8;
-    
 }
-
  
 #searchbar{
     width:900px;
@@ -47,7 +49,7 @@ header{
   
 }
 #tempcards{
-    margin-top: -30px;
+    margin-top: -60px;
 }
 .form-group
 {
@@ -130,7 +132,7 @@ p{
 footer{
     background:url("images/ICE.jpeg")no-repeat;
     background-size: cover;
-    width: 100vw;
+  
 
  
 }
