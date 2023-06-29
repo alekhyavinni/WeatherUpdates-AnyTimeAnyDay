@@ -2,11 +2,7 @@
     margin: 0%;
     padding: 0%;
 }
-body::before{
-display: block;
-content: '';
-height:60px;
-}
+
 main{
   background:whitesmoke;
   background-size: cover; 
@@ -46,8 +42,12 @@ header{
     height:100px;
     background:url("images/ICE.jpeg") no-repeat;
     background-size: cover;
+    margin-top: 25px;
   
   
+}
+#tempcards{
+    margin-top: -30px;
 }
 .form-group
 {
@@ -122,4 +122,15 @@ p{
     font-size:large;
     font-weight: 500;
     font-style: oblique;
+}
+#copyright{
+    font-style: italic;
+    font-weight:600;
+}
+footer{
+    background:url("images/ICE.jpeg")no-repeat;
+    background-size: cover;
+    width: 100vw;
+
+ 
 }
