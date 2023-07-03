@@ -4,6 +4,14 @@ This is  a weather dashboard that will run in the browser using [5 Day Weather F
 # User story
  A weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.By retrieving  weather data for cities through a 5-day weather Forecast API.
 
+ ## Usage
+```
+- This weather dashboard allows users to search for a city[using google maps] to get the current weather and 5 day forecast.
+- It will display the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed
+- Search history will be saved in local storage.
+- To search new city ,click on search bar so on focus the old city deletes Automatically .
+```
+
  # Acceptance criteria
  ```
 GIVEN a weather dashboard with form inputs
@@ -18,13 +26,6 @@ THEN you are presented with a 5-day forecast that displays the date, an icon rep
 -->THEN I am again presented with current and future conditions for that city
 ``` 
 
-## Usage
-```
-- This weather dashboard allows users to search for a city[using google maps] to get the current weather and 5 day forecast.
-- It will display the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed
-- Search history will be saved in local storage.
-- To search new city ,click on search bar so on focus the old city deletes Automatically .
-```
 
 # Technologies Used
 ```
