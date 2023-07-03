@@ -11,7 +11,7 @@ let searchHistory = JSON.parse(localStorage.getItem("searchcity")) || [];
 var autocomplete;
 
 
-
+//call for Google maps API 
 function initMap() {
     autocomplete = new google.maps.places.Autocomplete(cityname), {
      types: ['geocode']
@@ -25,6 +25,7 @@ cityname.innerHTML=''
  console.log(city);
 }
 
+//Rendering the past cities inside a form  from the local storage
 function getdisplaycities(){
     display.innerHTML=''
     for(let i=0;i<searchHistory.length;i++){
@@ -37,13 +38,13 @@ function getdisplaycities(){
     pasthistory.addEventListener('click',function(){
         cityname.value=pasthistory.value;
         console.log(cityname.value)
-    getWeatherApi();
+         getWeatherApi();
    })
    display.append(pasthistory)
-    }
+}
 }
 
-
+//Request the weatherforecast API by passing  the city name
 function getWeatherApi(){
     var requestUrl ='https://api.openweathermap.org/data/2.5/forecast?q='+cityname.value+'&appid=51e1b785d1c53673d1ab963a4ec63b88'
     fetch(requestUrl)
@@ -63,6 +64,7 @@ function getWeatherApi(){
             humidity[j].innerHTML=data.list[i].main.humidity+"%"
             wind[j].innerHTML=data.list[i].wind.speed+"Km/Hr"
 
+            //the weather icons displayed according to the weather conditions
             if(data.list[i].weather[0].main==="Clear"){
                icon[j].src="./assets/icons/clear.png";
             }
@@ -102,8 +104,7 @@ function getWeatherApi(){
     )
 }
 
-
-
+//on search the weather Api displays the forecast and push to local storage
 search.addEventListener('click',function(){
     var citydata= cityname.value;
     getWeatherApi()
