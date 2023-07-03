@@ -41,7 +41,7 @@ https://github.com/alekhyavinni/WeatherUpdates-AnyTimeAnyDay
 https://alekhyavinni.github.io/WeatherUpdates-AnyTimeAnyDay/
 
 # Screenshots
-<img src="assets/screenshot/weatherSC.png">
+<img src="assets/screenshot/weatherSs.png">
 
 # license
 Please refer to the License in repo
