@@ -8,7 +8,7 @@ var wind = document.querySelectorAll(".wind");
 var icon =document.querySelectorAll(".icon")
 var display =document.querySelector('#display')
 let searchHistory = JSON.parse(localStorage.getItem("searchcity")) || [];
-var autocomplete,button1;
+var autocomplete;
 
 
 
@@ -25,19 +25,22 @@ cityname.innerHTML=''
  console.log(city);
 }
 
-function displaycities(){
-    var section=document.createElement('div');
-    section.style.background= "url(./assets/css/images/ICE.jpeg) no-repeat";
-    section.style.textAlign='center';
-    button1 =document.createElement('button');
-   button1.setAttribute('value','submit');
-    button1.style.margin="5px"
-    button1.style.borderRadius="10px";
-    button1.style.width="80%"
-    button1.innerText=cityname.value
-    section.append(button1)
-    display.append(section)
-   
+function getdisplaycities(){
+    display.innerHTML=''
+    for(let i=0;i<searchHistory.length;i++){
+    const pasthistory =document.createElement('input');
+    pasthistory.setAttribute("type","text");
+    pasthistory.setAttribute("readonly",true)
+    pasthistory.setAttribute("class","form-control d-block bg-white")
+    pasthistory.setAttribute('value',searchHistory[i]);
+    pasthistory.style.textAlign="center"
+    pasthistory.addEventListener('click',function(){
+        cityname.value=pasthistory.value;
+        console.log(cityname.value)
+    getWeatherApi();
+   })
+   display.append(pasthistory)
+    }
 }
 
 
@@ -106,7 +109,7 @@ search.addEventListener('click',function(){
     getWeatherApi()
     searchHistory.push(citydata)
     localStorage.setItem("serachcity",JSON.stringify(searchHistory))
-    displaycities()
+    getdisplaycities()
 })
 initMap();
 
