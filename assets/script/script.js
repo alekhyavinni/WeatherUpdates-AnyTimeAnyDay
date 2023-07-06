@@ -44,6 +44,11 @@ function getdisplaycities(){
 }
 }
 
+function k2f(K) {
+    return Math.floor((K - 273.15) * 1.8 + 32);
+}
+
+
 //Request the weatherforecast API by passing  the city name
 function getWeatherApi(){
     var requestUrl ='https://api.openweathermap.org/data/2.5/forecast?q='+cityname.value+'&appid=51e1b785d1c53673d1ab963a4ec63b88'
@@ -59,7 +64,7 @@ function getWeatherApi(){
            
             var date1 = data.list[i].dt;
             date[j].innerHTML=moment.unix(date1).format("DD/MM/YYYY");
-            temp[j].innerHTML=Math.round(data.list[i].main.temp)+"°F"
+            temp[j].innerHTML=k2f(data.list[i].main.temp)+"°F"
             city[j].innerHTML=data.city.name;
             humidity[j].innerHTML=data.list[i].main.humidity+"%"
             wind[j].innerHTML=data.list[i].wind.speed+"Km/Hr"
